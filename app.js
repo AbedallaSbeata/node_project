@@ -8,8 +8,8 @@ const basicAuth = require('express-basic-auth')
 const port = 9000
 
 const users = {
-  username: 'admin',
-  password: 'password123'
+  Username: 'admin',
+  Password: 'password123'
 }
 app.use(basicAuth({
   users: users,
