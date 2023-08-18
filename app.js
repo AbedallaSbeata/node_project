@@ -4,9 +4,8 @@ const app = express()
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors')
-const port = 3000
-
-mongoose.connect('mongodb://127.0.0.1:27017/ecommerse', {
+const port = 9000
+mongoose.connect('mongodb+srv://abedallasbeata:l4cENYvwTlZ0GO8U@cluster0.t2n5jw1.mongodb.net/ecommerce?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   //useUnifiedTopology: true,
 })
@@ -22,6 +21,6 @@ app.use(cors())
 app.use('/products', productRoute)
 
 app.listen(port, () => {
-    console.log('Working on port 3000')
+    console.log('Working on port 9000')
 })
 module.exports = app
