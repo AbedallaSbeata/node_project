@@ -5,6 +5,7 @@ module.exports = {
         const products = await PRODUCTS.find()
         res.json({
             status: "success",
+            
             data: products.map(res => {
                 return {
                     id: res.id,
