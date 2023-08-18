@@ -9,7 +9,7 @@ const port = 9000
 
 const users = {
   username: 'abedalla',
-  password: 'ab638421'
+  password: '638421'
 }
 app.use(basicAuth({
   users: users,
