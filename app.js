@@ -8,12 +8,12 @@ const basicAuth = require('express-basic-auth')
 const port = 9000
 
 const users = {
-  username: 'abedalla',
-  password: '638421'
+  username: 'admin',
+  password: 'password123'
 }
 app.use(basicAuth({
   users: users,
-  unauthorizedResponse: req => 'Custom Unauthorized Response'
+  unauthorizedResponse: 'Unauthorized'
 }));
 mongoose.connect('mongodb+srv://abedallasbeata:l4cENYvwTlZ0GO8U@cluster0.t2n5jw1.mongodb.net/ecommerce?retryWrites=true&w=majority', {
   useNewUrlParser: true,
