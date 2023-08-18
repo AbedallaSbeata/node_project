@@ -13,7 +13,7 @@ const users = {
 }
 app.use(basicAuth({
   users: users,
-  unauthorizedResponse: 'Unauthorized'
+  unauthorizedResponse: req => 'Custom Unauthorized Response'
 }));
 mongoose.connect('mongodb+srv://abedallasbeata:l4cENYvwTlZ0GO8U@cluster0.t2n5jw1.mongodb.net/ecommerce?retryWrites=true&w=majority', {
   useNewUrlParser: true,
