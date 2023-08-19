@@ -1,6 +1,5 @@
 const express = require('express')
 const productRoute = require('./route/product')
-const carRoute = require('./route/product')
 const app = express()
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -9,7 +8,6 @@ const port = 9000
 
 mongoose.connect('mongodb+srv://abedallasbeata:l4cENYvwTlZ0GO8U@cluster0.t2n5jw1.mongodb.net/ecommerce?retryWrites=true&w=majority', {
   useNewUrlParser: true,
-  //useUnifiedTopology: true,
 })
 .then(() => {
   console.log('Connected to the database successfully');
@@ -21,7 +19,6 @@ mongoose.connect('mongodb+srv://abedallasbeata:l4cENYvwTlZ0GO8U@cluster0.t2n5jw1
 app.use([bodyParser.urlencoded({extended: true}), express.json()])
 app.use(cors())
 app.use('/products', productRoute)
-//app.use('/cars', carRoute)
 
 app.listen(port, () => {
     console.log('Working on port 9000')
