@@ -5,7 +5,6 @@ module.exports = {
         const products = await PRODUCTS.find()
         res.json({
             status: "success",
-            
             data: products.map(res => {
                 return {
                     id: res.id,
@@ -14,7 +13,7 @@ module.exports = {
                     desc: res.desc,
                 }
             })
-        })
+        }).pretty()
     },
     insertProduct : async (req,res) => {
         console.log(req.body);
