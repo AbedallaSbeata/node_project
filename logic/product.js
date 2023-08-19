@@ -1,4 +1,6 @@
 const PRODUCTS = require('../model/products')
+const CARS = require('../model/cars')
+
 
 module.exports = {
     getProducts : async (req,res) => {
@@ -15,8 +17,21 @@ module.exports = {
             })
         })
     },
+    getCars : async (req,res) => {
+        const cars = await CARS.find()
+        res.json({
+            status: "success",
+            data: cars.map(res => {
+                return {
+                    id: res.id,
+                    name: res.name,
+                    price: res.price,
+                    desc: res.desc,
+                }
+            })
+        })
+    },
     insertProduct : async (req,res) => {
-        console.log(req.body);
        const product = await new PRODUCTS({
             name: req.body.name,
             price: req.body.price,
@@ -24,6 +39,15 @@ module.exports = {
        }).save()
        
        res.json({"message:" : "inserted successfully", id : product.id, name : product.name})
+    },
+    insertCars : async (req,res) => {
+       const cars = await new CARS({
+            name: req.body.name,
+            price: req.body.price,
+            desc: req.body.desc
+       }).save()
+       
+       res.json({"message:" : "inserted successfully", id : cars.id, name : cars.name})
     },
     deleteProduct : async (req,res) => { 
         const id = req.params.id
