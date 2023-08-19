@@ -4,17 +4,8 @@ const app = express()
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors')
-const basicAuth = require('express-basic-auth')
 const port = 9000
 
-const users = {
-  Username: 'admin',
-  Password: 'password123'
-}
-app.use(basicAuth({
-  users: users,
-  unauthorizedResponse: 'Unauthorized'
-}));
 mongoose.connect('mongodb+srv://abedallasbeata:l4cENYvwTlZ0GO8U@cluster0.t2n5jw1.mongodb.net/ecommerce?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   //useUnifiedTopology: true,
