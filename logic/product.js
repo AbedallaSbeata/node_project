@@ -13,7 +13,7 @@ module.exports = {
                     desc: res.desc,
                 }
             })
-        }).pretty()
+        })
     },
     insertProduct : async (req,res) => {
         console.log(req.body);
