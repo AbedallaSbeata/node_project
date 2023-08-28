@@ -20,7 +20,7 @@ mongoose.connect('mongodb+srv://abedallasbeata:l4cENYvwTlZ0GO8U@cluster0.t2n5jw1
 app.use([bodyParser.urlencoded({extended: true}), express.json()])
 app.use(cors())
 app.use('/products', productRoute)
-app.use('/cars', productRoute)
+app.use('/cars', carRoute)
 
 
 app.listen(port, () => {
